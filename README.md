@@ -1,0 +1,82 @@
+<div align="center">
+
+# 👋 Olá, eu sou o Silas Melo!
+
+### **Desenvolvedor de Software | Licenciado em Matemática | Pós-Graduando em Engenharia de Software (PUC-Rio)**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/silas-melo-51baa446/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/7silasmelo7)
+[![Portfolio](https://img.shields.io/badge/Meu_Currículo-6C5CE7?style=for-the-badge&logo=google-chrome&logoColor=white)](https://7silasmelo7.github.io/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/silas_melo07)
+
+---
+
+### 🚀 *"Unindo a exatidão da Matemática com a inovação da Engenharia de Software."*
+
+</div>
+
+<br>
+
+## 📌 Sobre Mim
+
+Profissional em transição para a área de Tecnologia, combinando uma sólida bagagem analítica em **Matemática** com os conceitos modernos de **Engenharia de Software na PUC-Rio**. 
+
+- 🎓 **Educação:** Pós-Graduando em Engenharia de Software (PUC-Rio) & Licenciado em Matemática (UVA).
+- 💼 **Foco Atual:** Desenvolvimento Full Stack (Java, Python, APIs REST, SQL, HTML/CSS/JavaScript) e Engenharia de Software.
+- 💡 **Diferenciais:** Forte raciocínio lógico, resolução de problemas complexos, proatividade e comunicação clara desenvolvida em experiências prévias em docência, marketing e gestão.
+- 🎯 **Objetivo:** Atuar como Desenvolvedor de Software / Estagiário em Tecnologia.
+
+---
+
+## 🛠️ Tech Stack & Ferramentas
+
+<div align="center">
+
+### **Linguagens & Backend**
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![SQL](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+
+### **Frontend & Web**
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+### **Ferramentas & Workflow**
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-6C5CE7?style=for-the-badge&logo=githubcopilot&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
+
+</div>
+
+---
+
+## 🌟 Projetos em Destaque
+
+| Projeto | Descrição | Tecnologias |
+| :--- | :--- | :--- |
+| 📱 **[Compra Barato](https://github.com/7silasmelo7/MVP-Gestao-Agil-de-Projetos-e-Produtos)** | App para comparação de preços em supermercados com rotas inteligentes e gestão ágil. | Mobile / Gestão Ágil |
+| ⚙️ **[Agenda API](https://github.com/7silasmelo7/agendamento_api)** | API REST para sistema de agendamentos em clínicas médicas com documentação OpenAPI. | Python, Flask, SQLite, Swagger |
+| 💻 **[CRM Clínicas Front-End](https://github.com/7silasmelo7/agendamento_front_end)** | Interface SPA web responsiva para consumo da API de agendamentos. | HTML5, CSS3, JavaScript |
+| ☕ **[Bootcamp Abstraction](https://github.com/7silasmelo7/desafio-POO-dio)** | Abstração de domínio de cursos aplicando pilares avançados de POO. | Java, POO |
+| 🎮 **[Whac-A-Mole Game](https://github.com/7silasmelo7/Jogo-Whac-A-Mole)** | Jogo interativo arcade com manipulação de DOM e níveis de dificuldade. | JavaScript, HTML5, CSS3 |
+
+---
+
+## 📊 Estatísticas do GitHub
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=7silasmelo7&show_icons=true&theme=radical&include_all_commits=true&count_private=true" alt="Estatísticas do GitHub" height="175"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=7silasmelo7&layout=compact&theme=radical&hide=html,css" alt="Linguagens Mais Utilizadas" height="175"/>
+</div>
+
+---
+
+<div align="center">
+
+📬 **Vamos conversar ou tomar um café virtual?**  
+Sinta-se à vontade para me mandar uma mensagem no [LinkedIn](https://www.linkedin.com/in/silas-melo-51baa446/) ou me enviar um e-mail em **silascooll@hotmail.com**.
+
+</div>
