@@ -55,14 +55,6 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 
 ## 🌟 Projetos em Destaque
 
-
-<!-- START_SECTION:projects -->
-
-<!-- END_SECTION:projects -->
-
-
-
-
 | Projeto | Descrição | Tecnologias |
 | :--- | :--- | :--- |
 | 📱 **[Compra Barato](https://github.com/7silasmelo7/MVP-Gestao-Agil-de-Projetos-e-Produtos)** | App para comparação de preços em supermercados com rotas inteligentes e gestão ágil. | Mobile / Gestão Ágil |
