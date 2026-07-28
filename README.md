@@ -55,9 +55,7 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 
 ## 🌟 Projetos em Destaque
 
-<!-- START_SECTION:projects -->
 
-<!-- END_SECTION:projects -->
 
 | Projeto | Descrição | Tecnologias |
 | :--- | :--- | :--- |
