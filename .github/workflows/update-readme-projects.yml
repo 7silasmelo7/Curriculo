@@ -2,44 +2,40 @@ name: Atualizar Projetos no README
 
 on:
   schedule:
-    # Executa automaticamente todos os dias à meia-noite
     - cron: '0 0 * * *'
-  workflow_dispatch: # Permite acionar manualmente a qualquer momento
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Garante permissão para o bot alterar e salvar o README
+      contents: write
     steps:
       - name: Checkout do Repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '24'
 
       - name: Buscar Repositórios e Atualizar README
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const username = '7silasmelo7';
 
-            // 1. Busca os repositórios públicos
             const response = await github.rest.repos.listForUser({
               username: username,
               sort: 'updated',
               per_page: 100
             });
 
-            // 2. Filtra os projetos que possuem a tag "destaque"
             const projetosDestaque = response.data.filter(repo => 
               repo.topics && repo.topics.includes('destaque')
             );
 
-            // 3. Monta a tabela formatada em Markdown
             let markdownContent = '\n| Projeto | Descrição | Linguagem |\n| :--- | :--- | :--- |\n';
             
             projetosDestaque.forEach(repo => {
@@ -50,16 +46,17 @@ jobs:
             });
             markdownContent += '\n';
 
-            // 4. Substitui o conteúdo no README.md entre as tags
             const readmePath = 'README.md';
-            let readme = fs.readFileSync(readmePath, 'utf8');
-            const startTag = '<!-- START_SECTION:projects -->';
-            const endTag = '<!-- END_SECTION:projects -->';
+            if (fs.existsSync(readmePath)) {
+              let readme = fs.readFileSync(readmePath, 'utf8');
+              const startTag = '<!-- START_SECTION:projects -->';
+              const endTag = '<!-- END_SECTION:projects -->';
 
-            const regex = new RegExp(`${startTag}[\\s\\S]*?${endTag}`, 'g');
-            const newReadme = readme.replace(regex, `${startTag}${markdownContent}${endTag}`);
+              const regex = new RegExp(`${startTag}[\\s\\S]*?${endTag}`, 'g');
+              const newReadme = readme.replace(regex, `${startTag}${markdownContent}${endTag}`);
 
-            fs.writeFileSync(readmePath, newReadme);
+              fs.writeFileSync(readmePath, newReadme);
+            }
 
       - name: Commitar alterações no README
         run: |
