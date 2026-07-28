@@ -15,6 +15,56 @@
     <style>
 
       /* ========================================================
+      CARDS CLICÁVEIS ESTILO BOTÃO (PROJETOS E CERTIFICADOS)
+      ======================================================== */
+
+      /* Remove marcações padrão e ajustes da lista */
+      .w3-ul {
+        padding: 0 !important;
+      }
+
+      /* Transforma cada item <li> em um Card clicável */
+      .w3-ul li {
+        padding: 0 !important; /* O padding passa para a tag <a> para expandir o clique */
+        margin-bottom: 12px !important;
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+        list-style-type: none;
+        overflow: hidden;
+      }
+
+      /* Garante que o link ocupe 100% da área do Card */
+      .w3-ul li a {
+        display: block;
+        padding: 14px 16px;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-decoration: none !important;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(108, 92, 231, 0.1);
+      }
+
+      /* Efeito Hover para Computador (Desktop) */
+      @media (hover: hover) {
+        .w3-ul li:hover {
+          border-color: var(--primary-color) !important;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(108, 92, 231, 0.15);
+        }
+      }
+
+      /* Efeito ao Tocar na Tela do Celular (Feedback Tátil) */
+      .w3-ul li:active {
+        transform: scale(0.98);
+        background-color: var(--primary-light) !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ========================================================
       OTIMIZAÇÃO PARA TOUCHSCREEN (MÓVEL)
       ======================================================== */
 
@@ -274,16 +324,46 @@
             <div class="w3-container">
               <h5 class="w3-opacity"><b>Certificados</b></h5>
               
-              <ul>
-                <li><a href="https://pucrio.grupoa.education/academic-services/documents/validate/ddca9868" target="_blank">DESENVOLVIMENTO FULL STACK BÁSICO</a></li>
-                <li><a href="https://pucrio.grupoa.education/academic-services/documents/validate/d85cd327" target="_blank">APRIMORAMENTO: " DO ZERO AO CÓDIGO"</a></li>
-                <li><a href="https://pucrio.grupoa.education/academic-services/documents/validate/4f047942" target="_blank">GESTÃO ÁGIL DE PROJETOS E PRODUTOS</a></li>
-                <li><a href="https://hermes.dio.me/certificates/ZKHCGCR2.pdf" target="_blank">Princípios de Desenvolvimento de Aplicações - Java Cloud Native</a></li>
-                <li><a href="https://hermes.dio.me/certificates/N6Q6MIUH.pdf" target="_blank">GitHub Copilot - Desenvolvimento com IA na Prática</a></li>
-                <li><a href="https://hermes.dio.me/certificates/FOVRG8R0.pdf" target="_blank">Versionamento de Código Profissional com Git e GitHub</a></li>
-                
-              </ul>
-              <br>
+              <ul class="w3-ul">
+              <li>
+                <a href="https://pucrio.grupoa.education/academic-services/documents/validate/ddca9868" target="_blank">
+                  <b class="text-brand">DESENVOLVIMENTO FULL STACK BÁSICO</b>
+                  <i class="fa fa-external-link w3-small w3-right text-brand" style="margin-top: 3px;"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://pucrio.grupoa.education/academic-services/documents/validate/d85cd327" target="_blank">
+                  <b class="text-brand">APRIMORAMENTO: "DO ZERO AO CÓDIGO"</b>
+                  <i class="fa fa-external-link w3-small w3-right text-brand" style="margin-top: 3px;"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://pucrio.grupoa.education/academic-services/documents/validate/4f047942" target="_blank">
+                  <b class="text-brand">GESTÃO ÁGIL DE PROJETOS E PRODUTOS</b>
+                  <i class="fa fa-external-link w3-small w3-right text-brand" style="margin-top: 3px;"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://hermes.dio.me/certificates/ZKHCGCR2.pdf" target="_blank">
+                  <b class="text-brand">Princípios de Desenvolvimento de Aplicações - Java Cloud Native</b>
+                  <i class="fa fa-external-link w3-small w3-right text-brand" style="margin-top: 3px;"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://hermes.dio.me/certificates/N6Q6MIUH.pdf" target="_blank">
+                  <b class="text-brand">GitHub Copilot - Desenvolvimento com IA na Prática</b>
+                  <i class="fa fa-external-link w3-small w3-right text-brand" style="margin-top: 3px;"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://hermes.dio.me/certificates/FOVRG8R0.pdf" target="_blank">
+                  <b class="text-brand">Versionamento de Código Profissional com Git e GitHub</b>
+                  <i class="fa fa-external-link w3-small w3-right text-brand" style="margin-top: 3px;"></i>
+                </a>
+              </li>
+            </ul>
+            <br>
+              
             </div>
           </div>
 
@@ -373,20 +453,25 @@
         // Limpa a mensagem de carregamento
         container.innerHTML = '';
 
-        // Renderiza cada projeto dinamicamente 
+        // Renderiza cada projeto dinamicamente formatado como um Card Clicável
         projetosDestaque.forEach(repo => {
           const li = document.createElement('li');
           li.innerHTML = `
-            <a href="${repo.html_url}" target="_blank" class="text-brand">
-              <b>${repo.name.replace(/-/g, ' ')}</b>
+            <a href="${repo.html_url}" target="_blank">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <b class="text-brand">
+                  ${repo.name.replace(/-/g, ' ')} 
+                  <i class="fa fa-external-link w3-small" style="margin-left: 4px; opacity: 0.7;"></i>
+                </b>
+                ${repo.language ? `<span class="w3-tag w3-round bg-brand w3-tiny">${repo.language}</span>` : ''}
+              </div>
+              <p class="w3-small w3-text-grey" style="margin: 0;">
+                ${repo.description ? repo.description : 'Clique para visualizar este projeto no GitHub.'}
+              </p>
             </a>
-            ${repo.language ? `<span class="w3-tag w3-round bg-brand w3-right w3-tiny">${repo.language}</span>` : ''}
-            <p class="w3-small" style="margin-top: 5px;">
-              ${repo.description ? repo.description : 'Projeto desenvolvido no GitHub.'}
-            </p>
           `;
           container.appendChild(li);    
-        });
+});
 
       } catch (error) {
         console.error(error);
