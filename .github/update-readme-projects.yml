@@ -1,0 +1,66 @@
+name: Atualizar Projetos no README
+
+on:
+  schedule:
+    # Executa automaticamente todos os dias à meia-noite
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Permite que você rode manualmente quando quiser no painel do GitHub
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Buscar Repositórios e Atualizar README
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const username = '7silasmelo7';
+
+            // 1. Busca os repositórios públicos
+            const response = await github.rest.repos.listForUser({
+              username: username,
+              sort: 'updated',
+              per_page: 100
+            });
+
+            // 2. Filtra os projetos que possuem o tópico/tag "destaque"
+            const projetosDestaque = response.data.filter(repo => 
+              repo.topics && repo.topics.includes('destaque')
+            );
+
+            // 3. Monta a tabela ou lista formatada em Markdown
+            let markdownContent = '\n| Projeto | Descrição | Linguagem |\n| :--- | :--- | :--- |\n';
+            
+            projetosDestaque.forEach(repo => {
+              const name = repo.name.replace(/-/g, ' ');
+              const desc = repo.description ? repo.description : 'Projeto no GitHub.';
+              const lang = repo.language ? `\`${repo.language}\`` : 'N/A';
+              markdownContent += `| 🚀 **[${name}](${repo.html_url})** | ${desc} | ${lang} |\n`;
+            });
+            markdownContent += '\n';
+
+            // 4. Lê e substitui o conteúdo no README.md entre as tags de comentário
+            const readmePath = 'README.md';
+            let readme = fs.readFileSync(readmePath, 'utf8');
+            const startTag = '<!-- START_SECTION:projects -->';
+            const endTag = '<!-- END_SECTION:projects -->';
+
+            const regex = new RegExp(`${startTag}[\\s\\S]*?${endTag}`, 'g');
+            const newReadme = readme.replace(regex, `${startTag}${markdownContent}${endTag}`);
+
+            fs.writeFileSync(readmePath, newReadme);
+
+      - name: Commitar alterações no README
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git diff --quiet || (git commit -m "bot: atualização automática dos projetos em destaque" && git push)
