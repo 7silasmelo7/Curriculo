@@ -13,6 +13,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+
+      /* ========================================================
+      OTIMIZAÇÃO PARA TOUCHSCREEN (MÓVEL)
+      ======================================================== */
+
+      /* 1. Otimiza a resposta do toque e remove atrasos de clique */
+      a, button, .w3-button, .skill-tag {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(108, 92, 231, 0.2); /* Sombra suave ao tocar */
+      }
+
+      /* 2. Aumenta a área tocável de todos os links da lista (Projetos e Certificados) */
+      .w3-ul li a {
+        display: block;            /* Faz o link ocupar toda a linha clicável */
+        padding: 8px 4px;          /* Aumenta a área de toque acima e abaixo */
+        min-height: 44px;          /* Padrão mínimo da W3C para toque */
+      }
+
+      /* 3. Ajusta o espaçamento das listas para não ficarem grudadas */
+      .w3-ul li {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+      }
+
+      /* 4. Melhora a área de toque dos ícones/links da coluna esquerda */
+      .w3-third .w3-container p a {
+        display: inline-block;
+        padding: 6px 0;            /* Facilita clicar no e-mail, telefone, github etc. */
+      }
+
+      /* 5. Aumenta a área dos botões no Rodapé */
+      footer a.w3-button {
+        padding: 10px 16px !important;
+        margin: 4px !important;
+        font-weight: bold;
+      }
+
+      /* 6. Feedback visual para quando o dedo toca no link */
+      a:active, .w3-button:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+        transition: transform 0.1s ease;
+      }
+
       html, body, h1, h2, h3, h4, h5, h6 { font-family: "Roboto", sans-serif; }
       
       /* Definição do tema Cyber Violet */
@@ -193,8 +237,16 @@
               <i class="fa fa-code-fork fa-fw w3-margin-right w3-xxlarge text-brand"></i>PROJETOS EM DESTAQUE
             </h2>
             <div class="w3-container">
-              <ul class="w3-ul w3-hoverable">
-                <li>
+              <!-- Lista que será preenchida dinamicamente via javascript -->
+              <ul id="lista-projetos" class="w3-ul w3-hoverable">
+                <li class="w3-padding-16 w3-center text-brand">
+                  <i class="fa fa-spinner fa-spin fa-2x"></i>
+                  <p>Carregando projetos do GitHub ...</p>
+                </li>
+              </ul>
+              
+            
+                <li>              
                   <a href="https://github.com/7silasmelo7/MVP-Gestao-Agil-de-Projetos-e-Produtos" target="_blank" class="text-brand"><b>Compra Barato</b></a>
                   <p class="w3-small">Aplicativo mobile para comparação de preços em supermercados com rota inteligente e foco em experiência do usuário.</p>
                 </li>
@@ -321,6 +373,53 @@
       <a href="https://www.instagram.com/silas_melo07" target="_blank" class="w3-button w3-white w3-small w3-round"><i class="fa fa-instagram"></i> Instagram</a>
       <p class="w3-small w3-margin-top">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </footer>
-  
+  <script>
+    async function carregarProjetosDestaque() {
+      const username = '7silasmelo7';
+      const container = document.getElementById('lista-projetos');
+      
+      try {
+        // Busca repositórios públicos do seu usuário
+        const reponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+        if (!response.ok) throw new Error('Erro ao buscar repositórios do GitHub');
+
+        const repos = await response.json();
+
+        //Filtra os repositórios que possuem a tag/topic "destaque"
+        const projetosDestaque = repos.filter(repo => repo.topics && repo.topics.includes('detaque'));
+
+        if (projetosDestaque.length === 0){
+        container,innerHTML = '<li> Nenhum projeto marcado com a tag "destaque" ainda.</li>';
+        return;
+        }
+
+        // Limpa a mensagem de carregamento
+        container.innerHTML = '';
+
+        // Renderiza cada projeto dinamicamente 
+        projetosDestaque.forEach(repo => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${repo.html_url}" target="_blank" class="text-brand">
+              <b>${repo.name.replace(/-/g, ' ')}</b>
+            </a>
+            ${repo.language ? `<span class="w3-tag w3-round bg-brand w3-right w3-tiny">${repo.language}</span>` : ''}
+            <p class="w3-small" style="margin-top: 5px;">
+              ${repo.description ? repo.description : 'Projeto desenvolvido no GitHub.'}
+            </p>
+          `;
+          container.appendChild(li);    
+        });
+
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = '<li>Não foi possível carregar os projetos no momento.</li>';
+      }  
+    }
+
+    // Executa a função quando a página carregar
+    document.addEventListener('DOMContentLoaded', carregarProjetosDestaque);
+  </script>  
+    
   </body>
 </html>
