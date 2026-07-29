@@ -31,6 +31,7 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 ## 🛠️ Tech Stack & Ferramentas
 
 <!-- START_SECTION:techstack -->
+
 <!-- END_SECTION:techstack -->
 
 <br>
