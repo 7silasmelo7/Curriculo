@@ -58,14 +58,7 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 <!-- START_SECTION:projects -->
 
 <!-- END_SECTION:projects -->
-| Projeto | Descrição | Tecnologias |
-| :--- | :--- | :--- |
-| 📱 **[Compra Barato](https://github.com/7silasmelo7/MVP-Gestao-Agil-de-Projetos-e-Produtos)** | App para comparação de preços em supermercados com rotas inteligentes e gestão ágil. | Mobile / Gestão Ágil |
-| ⚙️ **[Agenda API](https://github.com/7silasmelo7/agendamento_api)** | API REST para sistema de agendamentos em clínicas médicas com documentação OpenAPI. | Python, Flask, SQLite, Swagger |
-| 💻 **[CRM Clínicas Front-End](https://github.com/7silasmelo7/agendamento_front_end)** | Interface SPA web responsiva para consumo da API de agendamentos. | HTML5, CSS3, JavaScript |
-| 🎮 **[Caça-Palavras](https://github.com/7silasmelo7/caca_palavra)** | Um jogo de adivinhação de palavras moderno e responsivo, com sistema de pontuação, teclado virtual e efeitos sonoros! | Python |
-| 🎮 **[Whac-A-Mole Game](https://github.com/7silasmelo7/Jogo-Whac-A-Mole)** | Jogo interativo arcade com manipulação de DOM e níveis de dificuldade. | JavaScript, HTML5, CSS3 |
-| ⚙️ **[Gerador de Dados Pessoais](https://github.com/7silasmelo7/Gerador-de-dados-pessoais)** | Aplicação web para gerar dados pessoais  brasileiros fictícios para testes e desenvolvimento. | Python, HTML5, CSS3 |
+
 
 ---
 
