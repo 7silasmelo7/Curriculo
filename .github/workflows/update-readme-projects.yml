@@ -50,18 +50,28 @@ jobs:
             let projectsMarkdown = '\n| Projeto | Descrição | Linguagem |\n| :--- | :--- | :--- |\n';
             const linguagensUsadas = new Set();
 
-            projetosDestaque.forEach(repo => {
+            // Buscar linguagens detalhadas de cada projeto
+            for (const repo of projetosDestaque) {
               const name = repo.name.replace(/-/g, ' ');
               const desc = repo.description ? repo.description : 'Projeto no GitHub.';
-              const lang = repo.language ? repo.language : 'N/A';
-              
-              if (repo.language) {
-                linguagensUsadas.add(repo.language);
-              }
-
               const langDisplay = repo.language ? `\`${repo.language}\`` : 'N/A';
+              
               projectsMarkdown += `| 🚀 **[${name}](${repo.html_url})** | ${desc} | ${langDisplay} |\n`;
-            });
+
+              // Requisita todas as linguagens do repositório (ex: HTML, CSS, JS)
+              try {
+                const langsResponse = await github.rest.repos.listLanguages({
+                  owner: username,
+                  repo: repo.name
+                });
+                
+                Object.keys(langsResponse.data).forEach(lang => {
+                  linguagensUsadas.add(lang);
+                });
+              } catch (e) {
+                if (repo.language) linguagensUsadas.add(repo.language);
+              }
+            }
             projectsMarkdown += '\n';
 
             // 2. Gerar Badges da Tech Stack Dinâmica
