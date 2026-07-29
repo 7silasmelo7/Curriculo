@@ -62,4 +62,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          git diff --quiet || (git commit -m "bot: atualização automática dos projetos em destaque" && git push)
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "bot: atualização automática dos projetos em destaque" && git push)      
+
+      
+          
