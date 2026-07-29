@@ -69,11 +69,13 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 
 ---
 
+
+
 ## 📊 Estatísticas do GitHub
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=7silasmelo7&show_icons=true&theme=radical&include_all_commits=true&count_private=true" alt="Estatísticas do GitHub" height="175"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=7silasmelo7&layout=compact&theme=radical&hide=html,css" alt="Linguagens Mais Utilizadas" height="175"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=7silasmelo7&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=7silasmelo7&layout=compact&theme=tokyonight&hide=html,css"/>
 </div>
 
 ---
