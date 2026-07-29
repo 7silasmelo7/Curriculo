@@ -31,7 +31,12 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 ## 🛠️ Tech Stack & Ferramentas
 
 <!-- START_SECTION:techstack -->
+<div align="center">
 
+### **Linguagens em Destaque nos Projetos**
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) 
+
+</div>
 <!-- END_SECTION:techstack -->
 
 <br>
