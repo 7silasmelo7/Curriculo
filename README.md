@@ -56,6 +56,15 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 ## 🌟 Projetos em Destaque
 
 <!-- START_SECTION:projects -->
+| Projeto | Descrição | Linguagem |
+| :--- | :--- | :--- |
+| 🚀 **[Jogo Whac A Mole](https://github.com/7silasmelo7/Jogo-Whac-A-Mole)** | Jogo clássico de arcade onde o objetivo é acertar o maior número possível de toupeiras que aparecem aleatoriamente nos buracos. O jogo possui três níveis de dificuldade, sistema de pontuação dinâmico e tabela de recordes. | `JavaScript` |
+| 🚀 **[Gerador de dados pessoais](https://github.com/7silasmelo7/Gerador-de-dados-pessoais)** | Aplicação web para geração de dados pessoais brasileiros fictícios para testes e desenvolvimento. | `Python` |
+| 🚀 **[agendamento_api](https://github.com/7silasmelo7/agendamento_api)** | API REST desenvolvida em Python + Flask, utilizando SQLite como banco de dados e documentada com Swagger (OpenAPI). O sistema permite cadastrar, listar, buscar e remover agendamentos de profissionais com seus respectivos pacientes. | `Python` |
+| 🚀 **[agendamento_front_end](https://github.com/7silasmelo7/agendamento_front_end)** | Interface web desenvolvida em HTML, CSS e JavaScript puro, funcionando como uma SPA (Single Page Application) para interação com a API de agendamentos. | `JavaScript` |
+| 🚀 **[MVP Gestao Agil de Projetos e Produtos](https://github.com/7silasmelo7/MVP-Gestao-Agil-de-Projetos-e-Produtos)** | Compra Barato é um app mobile que permite criar listas de compras, comparar automaticamente o custo total entre supermercados próximos, mostrar a economia em reais e percentual, destacar visualmente o mercado mais barato e abrir a rota para o local escolhido. | N/A |
+| 🚀 **[caca_palavra](https://github.com/7silasmelo7/caca_palavra)** | Projeto no GitHub. | `JavaScript` |
+| 🚀 **[jogo da velha](https://github.com/7silasmelo7/jogo-da-velha)** | Projeto criado para um botcamp em parceria com a Digital Innovation One | `JavaScript` |
 
 <!-- END_SECTION:projects -->
 
