@@ -82,7 +82,7 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 
 <div align="center">
   <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api?username=7silasmelo7&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true" alt="GitHub Stats" />
-  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=7silasmelo7&layout=compact&theme=tokyonight&hide=html,css" alt="Top Languages" />
+  <img height="165" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=7silasmelo7&layout=compact&theme=tokyonight" alt="Top Languages" />
 </div>
 
 ---
