@@ -31,13 +31,9 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 ## 🛠️ Tech Stack & Ferramentas
 
 <!-- START_SECTION:techstack -->
-<div align="center">
-
-### **Linguagens em Destaque nos Projetos**
-<!-- O script vai inserir as badges das linguagens detectadas nos seus repos "destaque" aqui -->
-
-</div>
 <!-- END_SECTION:techstack -->
+
+<br>
 
 <div align="center">
 
@@ -50,6 +46,8 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 ![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
 
 </div>
+
+
 ---
 
 ## 🌟 Projetos em Destaque
