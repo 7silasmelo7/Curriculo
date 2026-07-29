@@ -26,6 +26,16 @@ jobs:
             const fs = require('fs');
             const username = '7silasmelo7';
 
+            // Mapeamento de badges para Shields.io
+            const badgeMap = {
+              'JavaScript': '![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)',
+              'HTML': '![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)',
+              'CSS': '![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)',
+              'Python': '![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)',
+              'Java': '![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)',
+              'TypeScript': '![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)'
+            };
+
             const response = await github.rest.repos.listForUser({
               username: username,
               sort: 'updated',
@@ -36,26 +46,51 @@ jobs:
               repo.topics && repo.topics.includes('destaque')
             );
 
-            let markdownContent = '\n| Projeto | Descrição | Linguagem |\n| :--- | :--- | :--- |\n';
-            
+            // 1. Atualizar Tabela de Projetos
+            let projectsMarkdown = '\n| Projeto | Descrição | Linguagem |\n| :--- | :--- | :--- |\n';
+            const linguagensUsadas = new Set();
+
             projetosDestaque.forEach(repo => {
               const name = repo.name.replace(/-/g, ' ');
               const desc = repo.description ? repo.description : 'Projeto no GitHub.';
-              const lang = repo.language ? `\`${repo.language}\`` : 'N/A';
-              markdownContent += `| 🚀 **[${name}](${repo.html_url})** | ${desc} | ${lang} |\n`;
-            });
-            markdownContent += '\n';
+              const lang = repo.language ? repo.language : 'N/A';
+              
+              if (repo.language) {
+                linguagensUsadas.add(repo.language);
+              }
 
+              const langDisplay = repo.language ? `\`${repo.language}\`` : 'N/A';
+              projectsMarkdown += `| 🚀 **[${name}](${repo.html_url})** | ${desc} | ${langDisplay} |\n`;
+            });
+            projectsMarkdown += '\n';
+
+            // 2. Gerar Badges da Tech Stack Dinâmica
+            let stackMarkdown = '\n<div align="center">\n\n### **Linguagens em Destaque nos Projetos**\n';
+            linguagensUsadas.forEach(lang => {
+              if (badgeMap[lang]) {
+                stackMarkdown += `${badgeMap[lang]} `;
+              }
+            });
+            stackMarkdown += '\n\n</div>\n';
+
+            // 3. Gravar no README.md
             const readmePath = 'README.md';
             if (fs.existsSync(readmePath)) {
               let readme = fs.readFileSync(readmePath, 'utf8');
-              const startTag = '<!-- START_SECTION:projects -->';
-              const endTag = '<!-- END_SECTION:projects -->';
 
-              const regex = new RegExp(`${startTag}[\\s\\S]*?${endTag}`, 'g');
-              const newReadme = readme.replace(regex, `${startTag}${markdownContent}${endTag}`);
+              // Atualiza seção de projetos
+              const projStart = '<!-- START_SECTION:projects -->';
+              const projEnd = '<!-- END_SECTION:projects -->';
+              const projRegex = new RegExp(`${projStart}[\\s\\S]*?${projEnd}`, 'g');
+              readme = readme.replace(projRegex, `${projStart}${projectsMarkdown}${projEnd}`);
 
-              fs.writeFileSync(readmePath, newReadme);
+              // Atualiza seção de Tech Stack
+              const stackStart = '<!-- START_SECTION:techstack -->';
+              const stackEnd = '<!-- END_SECTION:techstack -->';
+              const stackRegex = new RegExp(`${stackStart}[\\s\\S]*?${stackEnd}`, 'g');
+              readme = readme.replace(stackRegex, `${stackStart}${stackMarkdown}${stackEnd}`);
+
+              fs.writeFileSync(readmePath, readme);
             }
 
       - name: Commitar alterações no README
@@ -63,7 +98,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "bot: atualização automática dos projetos em destaque" && git push)      
+          git diff --quiet && git diff --staged --quiet || (git commit -m "bot: atualização automática dos projetos em destaque" && git push)
+
 
       
           
