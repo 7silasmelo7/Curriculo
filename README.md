@@ -34,7 +34,7 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 <div align="center">
 
 ### **Linguagens em Destaque nos Projetos**
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
 
 </div>
 <!-- END_SECTION:techstack -->
@@ -61,8 +61,8 @@ Profissional em transição para a área de Tecnologia, combinando uma sólida b
 <!-- START_SECTION:projects -->
 | Projeto | Descrição | Linguagem |
 | :--- | :--- | :--- |
-| 🚀 **[frontendocr](https://github.com/7silasmelo7/frontendocr)** | Frontend em React/Next.js que fornece um painel interativo para um sistema de OCR. A interface tem alternância de tema (claro/escuro) e permite upload de imagens, exibição do texto extraído e consulta ao histórico com busca e paginação. Também inclui operações integradas à API para baixar arquivos, editar textos e excluir registros. | `TypeScript` |
 | 🚀 **[backendocr](https://github.com/7silasmelo7/backendocr)** | Este repositório fornece uma API REST baseada em Flask projetada para extrair texto de imagens utilizando o serviço OCR.space e gerenciar os resultados. A lógica principal está centralizada no arquivo api.py, que lida com o upload de arquivos, comunicação com a API externa de OCR e executa operações CRUD em um banco de dados. | `Python` |
+| 🚀 **[frontendocr](https://github.com/7silasmelo7/frontendocr)** | Frontend em React/Next.js que fornece um painel interativo para um sistema de OCR. A interface tem alternância de tema (claro/escuro) e permite upload de imagens, exibição do texto extraído e consulta ao histórico com busca e paginação. Também inclui operações integradas à API para baixar arquivos, editar textos e excluir registros. | `TypeScript` |
 | 🚀 **[Calculadora Carbono](https://github.com/7silasmelo7/Calculadora-Carbono)** | A Calculadora de Carbono para Viagens foi desenvolvida para ajudar você a visualizar e dimensionar o impacto ambiental dos seus trajetos de forma simples, rápida e precisa. | `JavaScript` |
 | 🚀 **[Jogo Whac A Mole](https://github.com/7silasmelo7/Jogo-Whac-A-Mole)** | Jogo clássico de arcade onde o objetivo é acertar o maior número possível de toupeiras que aparecem aleatoriamente nos buracos. O jogo possui três níveis de dificuldade, sistema de pontuação dinâmico e tabela de recordes. | `JavaScript` |
 | 🚀 **[Gerador de dados pessoais](https://github.com/7silasmelo7/Gerador-de-dados-pessoais)** | Aplicação web para geração de dados pessoais brasileiros fictícios para testes e desenvolvimento. | `Python` |
